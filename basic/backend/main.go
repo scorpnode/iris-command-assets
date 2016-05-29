@@ -17,7 +17,7 @@ func init() {
 
 func main() {
 	// set the favicon
-	iris.Favicon("../frontend/public/images/favicon.ico", "/favicon.ico")
+	iris.Favicon("../frontend/public/images/favicon.ico")
 
 	// set static folder(s)
 	iris.Static("/public", "../frontend/public", 1)
@@ -32,6 +32,15 @@ func main() {
 }
 
 func makeRouter() {
+	// define the custom errors
+	iris.OnError(iris.StatusNotFound, func(ctx *iris.Context) {
+		ctx.Render("errors/404.html", iris.Map{"Title": "Not found"})
+	})
+
+	iris.OnError(iris.StatusInternalServerError, func(ctx *iris.Context) {
+		ctx.Render("errors/500.html", iris.Map{"Title": "Server internal error"})
+	})
+
 	// set the routes
 	iris.Handle("GET", "/", Index())
 	// iris.Get("/", Index().Serve)
