@@ -19,6 +19,7 @@ func Index() *index {
 
 func (i *index) Serve(ctx *iris.Context) {
 	if err := ctx.Render("index.html", i); err != nil {
-		ctx.EmitError(iris.StatusInternalServerError)
+		// ctx.EmitError(iris.StatusInternalServerError) =>
+		ctx.Panic()
 	}
 }
