@@ -49,7 +49,7 @@ func registerRoutes() {
 	// Dynamic route
 
 	iris.Get("/profile/:username", routes.Profile)("user-profile")
-	// user-profile is the custom,optional, route's Name: with this we can use the {{ url ...}} inside userlist.html
+	// user-profile is the custom,optional, route's Name: with this we can use the {{ url "user-profile" $username}} inside userlist.html
 
 	iris.Get("/all", routes.UserList)
 }
