@@ -20,7 +20,7 @@ func main() {
 	iris.Static("/public", "../frontend/public", 1)
 
 	// set the global middlewares
-	iris.UseFunc(logger.Default())
+	iris.Use(logger.New(iris.Logger()))
 
 	// set the custom errors
 	iris.OnError(iris.StatusNotFound, func(ctx *iris.Context) {

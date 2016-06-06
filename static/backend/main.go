@@ -15,7 +15,7 @@ func main() {
 	})
 
 	// set the middleware(s)
-	iris.UseFunc(logger.Default())
+	iris.Use(logger.New(iris.Logger()))
 
 	// if you want to publish just a static website you don't have to set any routes
 	// Iris has one-line method to do that:
