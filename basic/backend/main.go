@@ -10,8 +10,8 @@ import (
 
 func main() {
 	// set the configs
-	iris.Config().Render.Template.Directory = "../frontend/templates"
-	iris.Config().Render.Template.Layout = "layout.html"
+	iris.Config.Render.Template.Directory = "../frontend/templates"
+	iris.Config.Render.Template.Layout = "layout.html"
 
 	// set the favicon
 	iris.Favicon("../frontend/public/images/favicon.ico")
@@ -20,7 +20,7 @@ func main() {
 	iris.Static("/public", "../frontend/public", 1)
 
 	// set the global middlewares
-	iris.Use(logger.New(iris.Logger()))
+	iris.Use(logger.New(iris.Logger))
 
 	// set the custom errors
 	iris.OnError(iris.StatusNotFound, func(ctx *iris.Context) {

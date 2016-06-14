@@ -3,5 +3,9 @@
 This repository contains the sample packages for the [Iris commanad line tool](https://github.com/kataras/iris/iris).
 
 ## Notes
+If you want to start manually the server, you should run the server from the backend folder, no outside.
+```sh
+$cd basic/backend
 
-The samples are running well, but if you want to edit the contents, make sure you change the import path to your $GOPATH/src/$projectLocation.
+$go run main.go
+```

@@ -23,7 +23,7 @@ func UserList(ctx *iris.Context) {
 	page := Page{"All users", users}
 
 	if err := ctx.Render("userlist.html", page); err != nil {
-		iris.Logger().Println(err.Error())
+		iris.Logger.Println(err.Error())
 		ctx.Panic()
 	}
 }
