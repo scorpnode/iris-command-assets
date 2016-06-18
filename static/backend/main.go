@@ -22,5 +22,5 @@ func main() {
 	iris.StaticWeb("/", "../frontend/webstatic", 0)
 
 	// start the server
-	iris.Listen("127.0.0.1:80")
+	iris.Listen("127.0.0.1:8080")
 }
