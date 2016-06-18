@@ -36,7 +36,7 @@ func main() {
 	registerAPI()
 
 	// start the server
-	iris.Listen("127.0.0.1:80")
+	iris.Listen("127.0.0.1:8080")
 }
 
 func registerRoutes() {
